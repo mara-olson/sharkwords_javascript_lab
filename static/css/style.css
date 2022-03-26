@@ -61,6 +61,6 @@ button {
   cursor: pointer;
 }
 
-button[disabled='true'] {
+button[disabled="true"] {
   cursor: default;
 }

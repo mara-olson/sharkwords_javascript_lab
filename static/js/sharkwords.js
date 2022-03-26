@@ -25,7 +25,7 @@ const createDivsForChars = (word) => {
 
     container.insertAdjacentHTML(
       "beforeend",
-      `<div class='letter-box' ${char}></div>`
+      `<div class='letter-box ${char}'></div>`
     );
   }
 };
@@ -56,6 +56,8 @@ const disableLetterButton = (buttonEl) => {
 
 const isLetterInWord = (letter) => {
   // Replace this with your code
+
+  return document.querySelector(`div.${letter}`) != null;
 };
 
 // This is like if __name__ == '__main__' in Python
@@ -74,9 +76,11 @@ const isLetterInWord = (letter) => {
   // call the function that makes a button for each letter in the alphabet
   generateLetterButtons();
 
-  buttonEl = document.querySelector("#letter-buttons > button:nth-child(8)");
+  buttonEl = document.querySelector("#letter-buttons > button:nth-child(7)");
 
   disableLetterButton(buttonEl);
+
+  isLetterInWord();
 
   // in the next lab, you will be adding functionality to handle when
   // someone clicks on a letter
